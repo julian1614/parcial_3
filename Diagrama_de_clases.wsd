@@ -1,0 +1,44 @@
+@startuml
+
+' Entidades
+
+class Usuario {
+  - idUsuario: int
+  - nombre: String
+  - direccion: String
+  - correoElectronico: String
+  - contrasena: String
+  - fechaRegistro: Date
+}
+
+class Libro {
+  - isbn: String
+  - titulo: String
+  - autor: String
+  - editorial: String
+  - añoPublicacion: int
+  - genero: String
+  - numeroPaginas: int
+  - cantidadEjemplares: int
+  - estadoFisico: String
+  - ubicacion: String
+}
+
+class Prestamo {
+  - idPrestamo: int
+  - idUsuario: int
+  - isbnLibro: String
+  - fechaPrestamo: Date
+  - fechaDevolucionPrevista: Date
+  - fechaDevolucionReal: Date
+  - estadoPrestamo: String
+}
+
+' Relaciones
+
+Usuario *-* Prestamo
+Libro *-* Prestamo
+
+@endumls
+
+

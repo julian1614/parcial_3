@@ -1,0 +1,26 @@
+@startuml 
+
+actor Cliente
+participant "tienda" as SR
+participant Producto
+participant Inventario
+participant FacturaCliente
+participant Detallefactura
+
+Cliente -> SR: ingresar a la tienda
+
+
+SR -> Producto : buscar producto
+Producto -> Inventario: berificar producto()
+Inventario -> SR : confirmar()
+
+SR -> Cliente : confrimar()
+
+Inventario -> FacturaCliente : Ingresar informacion()
+
+FacturaCliente -> Detallefactura : ingresar informacion()
+Detallefactura -> Cliente : confirmar()
+
+
+
+@enduml

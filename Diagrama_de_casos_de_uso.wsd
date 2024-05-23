@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+actor Cliente as clien
+
+
+rectangle "tienda" {
+    usecase "factura Cliente" as Facturacleinte
+    usecase "deatlle factura" as Dettalefactura
+    usecase "producto" as Producto
+    usecase "ingresar producto" as Ingresarproducto
+    usecase "inventario" as Inventario
+    usecase "ingresar inventario" as Ingresarinventario
+    
+}
+
+clien --> Facturacleinte
+clien --> Dettalefactura
+clien --> Producto
+Producto --> Ingresarproducto
+clien --> Inventario
+Inventario --> Ingresarinventario
+
+
+
+
+@enduml
